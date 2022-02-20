@@ -1,0 +1,30 @@
+linters:
+  enable-all: true
+  disable:
+    - golint # deprecated
+    - interfacer # deprecated
+    - maligned # deprecated
+    - nlreturn
+    - paralleltest
+    - scopelint # deprecated
+    - varnamelen
+    - wsl
+
+linters-settings:
+  gosec:
+    excludes:
+      - G404
+
+issues:
+  exclude-use-default: false
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        #- gocyclo
+        #- errcheck
+        #- gosec
+        - dupl
+        - errorlint
+        - funlen
+        - gochecknoglobals
+        - goerr113
